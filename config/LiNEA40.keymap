@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,
+            //スクロール方向を逆転,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -125,7 +125,7 @@
             bindings = <
 &kp Q                          &kp W         &kp E               &kp R    &kp T                                   &kp Y        &kp U  &mt SCROLLLOCK I     &kp O    &kp P
 &kp A                          &kp S         &kp D               &kp F    &kp G                                   &kp H        &kp J  &kp K                &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z               &kp X         &kp C               &kp V    &kp B                                   &kp N        &kp M  &kp COMMA            &kp DOT  &mt RIGHT_SHIFT QMARK
+&mt LEFT_SHIFT Z               &kp X         &kp C               &kp V    &kp B                                   &kp N        &kp M  &kp COMMA            &kp DOT  &mt RIGHT_SHIFT SLASH
 &mt LCTRL LANG_ZENKAKUHANKAKU  &kp LEFT_WIN  &mt LEFT_ALT GRAVE  &kp INS  &mkp MB1  &lt 2 SPACE    &kp BACKSPACE  &lt 3 ENTER         &lt 6 RIGHT_BRACKET  &kp TAB  &kp DELETE
             >;
 
