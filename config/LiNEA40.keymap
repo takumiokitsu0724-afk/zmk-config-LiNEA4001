@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,
+            //スクロール方向を逆転,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -118,6 +118,24 @@
         };
     };
 
+    macros {
+        bt_Mac: bt_Mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 200>, <&to 0>;
+
+            label = "BT_MAC";
+        };
+
+        bt_Win: bt_Win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 200>, <&to 2>;
+
+            label = "BT_WIN";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -136,21 +154,21 @@
 
         Mac_Win {
             bindings = <
-&trans  &kp LC(LS(TAB))  &kp LC(UP_ARROW)  &kp LC(TAB)    &kp LC(J)                            &kp RC(RA(D))  &kp RC(RA(E))     &kp RC(RA(F))  &kp RC(RA(T))  &kp RC(RA(NUMBER_6))
-&trans  &kp LC(LEFT)     &kp LS(LG(T))     &kp LS(RIGHT)  &kp SPACE                            &kp RC(K)      &kp RC(RA(LEFT))  &trans         &trans         &trans
-&trans  &kp LG(LEFT)     &kp LC(DOWN)      &kp LG(RIGHT)  &kp LC(LG(SPACE))                    &trans         &trans            &trans         &trans         &trans
-&trans  &trans           &trans            &trans         &trans             &trans    &trans  &trans                           &trans         &trans         &trans
+&trans  &kp LC(LS(TAB))  &kp LC(UP_ARROW)  &kp LC(TAB)    &kp LC(J)                            &kp RC(RA(D))      &kp RC(RA(E))     &kp RC(RA(F))  &kp RC(RA(T))      &kp RC(RA(NUMBER_6))
+&trans  &kp LC(LEFT)     &kp LS(LG(T))     &kp LS(RIGHT)  &kp SPACE                            &kp RC(K)          &kp RC(RA(LEFT))  &kp F11        &kp RC(RA(RIGHT))  &kp RC(RA(ENTER))
+&trans  &kp LG(LEFT)     &kp LC(DOWN)      &kp LG(RIGHT)  &kp LC(LG(SPACE))                    &kp RC(SEMICOLON)  &trans            &kp F19        &trans             &trans
+&trans  &trans           &trans            &trans         &trans             &trans    &trans  &trans                               &trans         &trans             &trans
             >;
         };
 
         //2
 
-        MARK {
+        Win_Base {
             bindings = <
-&kp EXCLAMATION             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PERCENT                     &kp KP_NUM    &kp AMPERSAND  &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp COLON                       &kp AT        &kp LS(LBKT)   &kp RIGHT_BRACKET      &kp BACKSLASH         &kp EQUAL
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SQT                         &kp KP_EQUAL  &kp INT3       &kp LS(RIGHT_BRACKET)  &kp LS(BACKSLASH)     &kp LS(INT1)
-&trans                      &trans           &trans           &trans           &trans       &trans    &kp TAB  &mkp MB2                     &kp ASTERISK           &kp LEFT_PARENTHESIS  &kp LS(QUESTION)
+&kp Q             &kp W         &kp E               &kp R   &kp T                                           &kp Y        &kp U  &kp I                 &kp O           &kp P
+&kp A             &kp S         &kp D               &kp F   &kp G                                           &kp H        &kp J  &kp K                 &kp L           &kp RIGHT_SHIFT
+&kp Z             &kp X         &kp C               &kp V   &kp B                                           &kp N        &kp M  &kp COMMA             &kp PERIOD      &kp SLASH
+&kp LEFT_COMMAND  &kp LEFT_ALT  &kp RC(LANGUAGE_2)  &trans  &lt 8 LANGUAGE_1  &lt 3 SPACE    &kp BACKSPACE  &lt 9 ENTER         &lt 10 RIGHT_BRACKET  &kp UNDERSCORE  &kp LS(DEL)
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -158,12 +176,12 @@
 
         //3
 
-        CURSOR {
+        Win_Win {
             bindings = <
-&trans    &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LG(RIGHT_ARROW))  &trans                       &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-&trans    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT_ARROW          &trans                       &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
-&kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                       &kp UNDER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-&trans    &trans                  &trans        &trans                   &trans  &trans    &kp ENTER  &kp NUMBER_0                   &kp DOT       &kp ENTER     &kp QUESTION
+&trans  &kp LC(LS(TAB))   &kp LG(TAB)    &kp LC(TAB)              &kp LG(SLASH)                    &trans  &trans        &trans             &trans         &trans
+&trans  &kp LC(LG(LEFT))  &kp LC(LS(T))  &kp LC(LG(RIGHT_ARROW))  &kp SPACE                        &kp F7  &kp LG(LEFT)  &kp LG(D)          &kp LG(RIGHT)  &kp LG(UP_ARROW)
+&trans  &kp LA(LEFT)      &trans         &kp LA(RIGHT)            &kp LG(COMMA)                    &kp F8  &trans        &kp RS(RG(RIGHT))  &trans         &trans
+&trans  &trans            &trans         &trans                   &trans         &trans    &trans  &trans                &trans             &trans         &trans
             >;
         };
 
