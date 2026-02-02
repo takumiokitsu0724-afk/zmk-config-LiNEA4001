@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -154,10 +154,10 @@
 
         Mac_Win {
             bindings = <
-&trans  &kp LC(LS(TAB))  &kp LC(UP_ARROW)  &kp LC(TAB)    &kp LC(J)                            &kp RC(RA(D))      &kp RC(RA(E))     &kp LG(LS(NUMBER_3))  &kp LG(LS(NUMBER_4))  &kp LG(LS(N5))
-&trans  &kp LC(LEFT)     &kp LS(LG(T))     &kp LS(RIGHT)  &kp SPACE                            &kp RC(K)          &kp RC(RA(LEFT))  &kp F11               &kp RC(RA(RIGHT))     &kp RC(RA(ENTER))
-&trans  &kp LG(LEFT)     &kp LC(DOWN)      &kp LG(RIGHT)  &kp LC(LG(SPACE))                    &kp RC(SEMICOLON)  &trans            &kp F19               &trans                &trans
-&trans  &trans           &trans            &trans         &trans             &trans    &trans  &trans                               &trans                &trans                &trans
+&trans  &kp LC(LS(TAB))  &kp LC(UP_ARROW)  &kp LC(TAB)    &kp LC(J)                            &kp RC(RA(D))      &kp RC(RA(E))     &trans   &kp LG(LS(NUMBER_4))  &kp LG(LS(N5))
+&trans  &kp LC(LEFT)     &kp LS(LG(T))     &kp LS(RIGHT)  &kp SPACE                            &kp RC(K)          &kp RC(RA(LEFT))  &kp F11  &kp RC(RA(RIGHT))     &kp RC(RA(ENTER))
+&trans  &kp LG(LEFT)     &kp LC(DOWN)      &kp LG(RIGHT)  &kp LC(LG(SPACE))                    &kp RC(SEMICOLON)  &trans            &kp F19  &trans                &trans
+&trans  &trans           &trans            &trans         &trans             &trans    &trans  &trans                               &trans   &trans                &trans
             >;
         };
 
@@ -235,7 +235,7 @@
 
         SymNum {
             bindings = <
-&kp LS(SEMI)   &kp LS(APOSTROPHE)  &trans        &trans            &kp A                                &kp SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS
+&kp LS(SEMI)   &kp LS(APOSTROPHE)  &trans        &trans            &kp KP_NUMLOCK                       &kp SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS
 &kp BACKSLASH  &trans              &trans        &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kp ASTRK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS
 &kp N0         &kp N7              &kp NUMBER_2  &kp NUMBER_4      &kp EXCLAMATION                      &kp N0     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD
 &mkp MB5       &trans              &trans        &trans            &trans             &trans    &trans  &trans                   &trans        &trans        &kp EQUAL
